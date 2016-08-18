@@ -7,11 +7,6 @@ class Rq < Formula
 
   head "https://github.com/dflemstr/rq.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "c4ab7d8e4aff2b0fbbdc821c62e5a8f49c591699a4fc4bf4ea94fc0d0972dfaf" => :el_capitan
-  end
-
   depends_on "rust" => :build
   depends_on "protobuf" => :recommended
 
