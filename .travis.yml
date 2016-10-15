@@ -1,0 +1,31 @@
+sudo: false
+
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode8
+    - os: osx
+      osx_image: xcode7.1
+    - os: osx
+      osx_image: beta-xcode6.2
+
+before_install:
+  - brew cleanup
+  - brew update
+
+script:
+  - brew tap dflemstr/v8
+  - brew tap dflemstr/tools
+  - brew install --verbose --build-bottle dflemstr/tools/rq
+  - brew bottle dflemstr/tools/rq
+
+deploy:
+  provider: releases
+  api_key: "${GH_TOKEN}"
+  file: "*.bottle.tar.gz"
+  file_glob: true
+  skip_cleanup: true
+  on:
+    repo: dflemstr/homebrew-tools
+    tags: true
+  overwrite: true
