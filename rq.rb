@@ -8,6 +8,7 @@ class Rq < Formula
   head "https://github.com/dflemstr/rq.git"
 
   depends_on "rust" => :build
+  depends_on "dflemstr/v8/v8" => :build
   depends_on "protobuf" => :recommended
 
   def install
