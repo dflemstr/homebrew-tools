@@ -4,20 +4,34 @@ matrix:
   include:
     - os: osx
       osx_image: xcode8
+      env: FORMULA=v8
     - os: osx
       osx_image: xcode7.1
+      env: FORMULA=v8
     - os: osx
       osx_image: beta-xcode6.2
+      env: FORMULA=v8
+    - os: osx
+      osx_image: xcode8
+      env: FORMULA=rq
+    - os: osx
+      osx_image: xcode7.1
+      env: FORMULA=rq
+    - os: osx
+      osx_image: beta-xcode6.2
+      env: FORMULA=rq
 
 before_install:
   - brew cleanup
   - brew update
 
+install:
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+
 script:
-  - brew tap dflemstr/v8
   - brew tap dflemstr/tools
-  - brew install --verbose --build-bottle dflemstr/tools/rq
-  - brew bottle dflemstr/tools/rq
+  - brew install --verbose --build-bottle "dflemstr/tools/$FORMULA"
+  - brew bottle "dflemstr/tools/$FORMULA"
 
 deploy:
   provider: releases
