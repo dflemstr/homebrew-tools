@@ -48,7 +48,7 @@ class V8 < Formula
 
     cd buildpath/"v8" do
       system "gn", "gen", "out.gn/release", "--args=" + gn_args
-      system "ninja", "-C", "out.gn/release"
+      system "ninja", "-C", "out.gn/release", "v8", "d8", "mksnapshot", "v8_shell"
 
       include.install Dir["include/*"]
 
