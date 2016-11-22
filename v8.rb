@@ -8,6 +8,8 @@ class V8 < Formula
 
   bottle do
     cellar :any
+    root_url "https://github.com/dflemstr/homebrew-tools/releases/download/v1/"
+    sha256 "01f63f99a5a83b53f1f776c007a10ad4d8e066bbf4a16c3ab3265d4ab9b6458b" => :el_capitan
   end
 
   option "with-readline", "Use readline instead of libedit"
