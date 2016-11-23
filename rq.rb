@@ -7,6 +7,12 @@ class Rq < Formula
 
   head "https://github.com/dflemstr/rq.git"
 
+  bottle do
+    cellar :any
+    root_url "https://github.com/dflemstr/homebrew-tools/releases/download/v2/"
+    sha256 "0d4caab2f8ae7d89b0da826bf1a28e2348e7e3a3755945a7e73ed2a6d0bd124b" => :el_capitan
+  end
+
   depends_on "rust" => :build
   depends_on "dflemstr/tools/v8"
   depends_on "protobuf" => :recommended
