@@ -12,7 +12,7 @@ class Rq < Formula
   depends_on "protobuf" => :recommended
 
   def install
-    system "cargo", "build", "--release"
+    system "cargo", "build", "--release", "--features=shared"
     bin.install "target/release/rq"
   end
 
