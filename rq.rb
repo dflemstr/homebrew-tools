@@ -1,9 +1,9 @@
 class Rq < Formula
   desc "Record Query - A tool for doing record analysis and transformation"
   homepage "https://github.com/dflemstr/rq"
-  url "https://github.com/dflemstr/rq/archive/v0.9.1.tar.gz"
-  version "0.9.1"
-  sha256 "e93b6800ef7a7c5915af803d909c9924a420c4b9a36d8f590cfab953957ece4b"
+  url "https://github.com/dflemstr/rq/archive/v0.9.2.tar.gz"
+  version "0.9.2"
+  sha256 "2c6564a8507aafd08885adabbe052b820ac77f830edafe4fdae09629d6241b28"
 
   head "https://github.com/dflemstr/rq.git"
 
