@@ -46,7 +46,7 @@ class V8 < Formula
     ENV.prepend_create_path "PATH", (buildpath/"depot_tools")
 
     system "gclient", "config", "https://github.com/v8/v8.git"
-    system "gclient", "sync", "-v", "--no-history", "-r", "5.6.222"
+    system "gclient", "sync", "-v", "-r", "5.6.222"
 
     cd buildpath/"v8" do
       system "gn", "gen", "out.gn/release", "--args=" + gn_args
