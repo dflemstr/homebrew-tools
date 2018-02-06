@@ -18,7 +18,7 @@ class V8 < Formula
   # https://github.com/Homebrew/homebrew/issues/21426
   depends_on :macos => :lion
 
-  depends_on python => :build
+  depends_on "python" => :build
   depends_on :xcode => :build
   depends_on "readline" => :optional
   depends_on "icu4c" => :recommended
